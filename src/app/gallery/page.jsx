@@ -7,14 +7,14 @@ function page(props) {
       <table>
         <tbody>
           <tr>
-               <td><Image src="/images/tree-1.jpg" width={50} height={50}/></td>
-                <td><Image src="/images/tree-2.jpg" width={50} height={50}/></td>
-                <td><Image src="/images/tree-3.jpg" width={50} height={50}/></td>
+               <td><Image src="/images/tree-1.jpg" alt="" width={50} height={50}/></td>
+                <td><Image src="/images/tree-2.jpg" alt="" width={50} height={50}/></td>
+                <td><Image src="/images/tree-3.jpg" alt="" width={50} height={50}/></td>
            </tr>
           <tr>
-              <td><Image src="/images/tree-4.jpg" width={50} height={50}/></td>
-              <td><Image src="/images/tree-5.jpg" width={50} height={50}/></td>
-              <td><Image src="/images/tree-6.jpg" width={50} height={50}/></td>
+              <td><Image src="/images/tree-4.jpg" alt="" width={50} height={50}/></td>
+              <td><Image src="/images/tree-5.jpg" alt="" width={50} height={50}/></td>
+              <td><Image src="/images/tree-6.jpg" alt="" width={50} height={50}/></td>
           </tr>
         </tbody>
       </table>
