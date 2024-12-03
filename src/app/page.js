@@ -4,9 +4,10 @@
 
 // import Image from "next/image";
 // import img01 from "/public/images/coffee-blue.jpg"
+//자식 컴포넌트 
 import ItemList from './itemList/page' ;
 
-//자식 컴포넌트 
+
 export default function Home() {
   return (
       // 해당 내용은 부모컴포넌트의 props =>{children}에 삽입
