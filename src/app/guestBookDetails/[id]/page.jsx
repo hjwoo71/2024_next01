@@ -23,11 +23,17 @@ function Page({params}) {
               // const resolvedParams = await Promise.resolve(params); // params 언래핑
               // const { id } = resolvedParams; // id 추출
               const { id } = await Promise.resolve(params);
-              const API_URL = `${BASE_API_BASE_URL}/guestbook/detail?gb_idx=${id}`;
+              const API_URL = `${BASE_API_BASE_URL}/guestbook/detail/${id}`;
 
               // 데이터 가져오기
               const response = await axios.get(API_URL);
-              setItem(response.data);
+              const data = response.data;
+              if(data.success){
+                   setItem(data.data);
+              }else{
+                    setError("Failed to fetch product data.");
+              }
+
           } catch (err) {
               console.error("Error fetching product data:", err);
               setError("Failed to fetch product data.");
@@ -60,24 +66,27 @@ function Page({params}) {
                 <Table className="custom-table">
                     <TableBody>
                             <TableRow>
+                                <TableCell className="table-cell">IDX</TableCell>
                                 <TableCell className="table-cell">{item.gb_idx}</TableCell>
                             </TableRow>
-                            <TableRow>    
+                            <TableRow>
+                                <TableCell className="table-cell">NAME</TableCell>    
                                 <TableCell className="table-cell">{item.gb_name}</TableCell>
                              </TableRow>
                              <TableRow>   
+                                <TableCell className="table-cell">SUBJECT</TableCell>
                                 <TableCell className="table-cell">{item.gb_subject}</TableCell>
                               </TableRow>
                               <TableRow>
+                                <TableCell className="table-cell">CONTENT</TableCell> 
                                 <TableCell className="table-cell">{item.gb_content}</TableCell>
                               </TableRow>
                               <TableRow>
+                                <TableCell className="table-cell">EMAIL</TableCell>
                                 <TableCell className="table-cell">{item.gb_email}</TableCell>
                               </TableRow>
                               <TableRow>
-                                <TableCell className="table-cell">{item.gb_pw}</TableCell>
-                              </TableRow>
-                              <TableRow>
+                                 <TableCell className="table-cell">DATE</TableCell>
                                 <TableCell className="table-cell">{item.gb_regdate}</TableCell>
                             </TableRow>
                     </TableBody>
